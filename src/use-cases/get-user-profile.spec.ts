@@ -13,6 +13,7 @@ describe('Get User Profile Use Case', () => {
     sut = new GetUserProfileUseCase(usersRepository)
   })
 
+  // TODO fix thix
   it('should be able to get user profile', async () => {
     const createdUser = await usersRepository.create({
       name: 'John Doe',
