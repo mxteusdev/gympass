@@ -13,7 +13,6 @@ describe('Get User Profile Use Case', () => {
     sut = new GetUserProfileUseCase(usersRepository)
   })
 
-  // TODO fix thix
   it('should be able to get user profile', async () => {
     const createdUser = await usersRepository.create({
       name: 'John Doe',
@@ -25,7 +24,7 @@ describe('Get User Profile Use Case', () => {
       userId: createdUser.id,
     })
 
-    expect(user.name).toEqual(expect('John Doe'))
+    expect(user.name).toEqual('John Doe')
   })
 
   it('should not be able to get user profile with wrong id', async () => {
