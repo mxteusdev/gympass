@@ -17,16 +17,10 @@ export class SearchGymsUseCase {
     query,
     page,
   }: SearchGymsUseCaseRequest): Promise<SearchGymsUseCaseResponse> {
-    const gym = await this.gymsRepository.create({
-      title,
-      description,
-      phone,
-      latitude,
-      longitude,
-    })
+    const gyms = await this.gymsRepository.searchMany(query, page)
 
     return {
-      gym,
+      gyms,
     }
   }
 }
